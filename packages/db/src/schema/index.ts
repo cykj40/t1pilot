@@ -1,1 +1,1 @@
-export * from "./glucose.js";
+export * from './glucose.js'

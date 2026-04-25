@@ -1,24 +1,24 @@
-import { Client } from "@modelcontextprotocol/sdk/client/index.js";
-import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+import { Client } from '@modelcontextprotocol/sdk/client/index.js'
+import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js'
 
 export interface DexcomMcpClientOptions {
-  serverCommand: string;
-  serverArgs?: string[];
+  serverCommand: string
+  serverArgs?: string[]
 }
 
 export async function createDexcomMcpClient(options: DexcomMcpClientOptions) {
   const transport = new StdioClientTransport({
     command: options.serverCommand,
     args: options.serverArgs ?? [],
-  });
+  })
 
   const client = new Client(
-    { name: "t1pilot-dexcom-client", version: "0.0.1" },
-    { capabilities: {} }
-  );
+    { name: 't1pilot-dexcom-client', version: '0.0.1' },
+    { capabilities: {} },
+  )
 
-  await client.connect(transport);
-  return client;
+  await client.connect(transport)
+  return client
 }
 
-export type DexcomMcpClient = Awaited<ReturnType<typeof createDexcomMcpClient>>;
+export type DexcomMcpClient = Awaited<ReturnType<typeof createDexcomMcpClient>>

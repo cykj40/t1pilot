@@ -1,5 +1,5 @@
-import { StateGraph, Annotation } from "@langchain/langgraph";
-import type { GlucoseReading } from "@t1pilot/types";
+import { StateGraph, Annotation } from '@langchain/langgraph'
+import type { GlucoseReading } from '@t1pilot/types'
 
 const OrchestratorState = Annotation.Root({
   readings: Annotation<GlucoseReading[]>({
@@ -8,22 +8,22 @@ const OrchestratorState = Annotation.Root({
   }),
   summary: Annotation<string>({
     reducer: (_, next) => next,
-    default: () => "",
+    default: () => '',
   }),
-});
+})
 
-export type OrchestratorStateType = typeof OrchestratorState.State;
+export type OrchestratorStateType = typeof OrchestratorState.State
 
 function analyzeNode(state: OrchestratorStateType): Partial<OrchestratorStateType> {
-  const count = state.readings.length;
-  return { summary: `Analyzed ${count} glucose reading(s).` };
+  const count = state.readings.length
+  return { summary: `Analyzed ${String(count)} glucose reading(s).` }
 }
 
 export function buildOrchestrator() {
   const graph = new StateGraph(OrchestratorState)
-    .addNode("analyze", analyzeNode)
-    .addEdge("__start__", "analyze")
-    .addEdge("analyze", "__end__");
+    .addNode('analyze', analyzeNode)
+    .addEdge('__start__', 'analyze')
+    .addEdge('analyze', '__end__')
 
-  return graph.compile();
+  return graph.compile()
 }

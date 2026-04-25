@@ -1,0 +1,8 @@
+node_modules
+dist
+.next
+out
+build
+.turbo
+pnpm-lock.yaml
+*.md
