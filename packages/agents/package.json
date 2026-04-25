@@ -1,0 +1,30 @@
+{
+  "name": "@t1pilot/agents",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@langchain/anthropic": "^0.3.13",
+    "@langchain/langgraph": "^0.2.55",
+    "@t1pilot/db": "workspace:*",
+    "@t1pilot/types": "workspace:*",
+    "@t1pilot/utils": "workspace:*",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
