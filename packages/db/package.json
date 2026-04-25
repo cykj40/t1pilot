@@ -23,7 +23,7 @@
     "@libsql/client": "^0.14.0",
     "@neondatabase/serverless": "^0.10.4",
     "@t1pilot/types": "workspace:*",
-    "drizzle-orm": "^0.38.3",
+    "drizzle-orm": "^0.45.2",
     "zod": "^3.24.1"
   },
   "devDependencies": {
