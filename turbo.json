@@ -22,6 +22,18 @@
     },
     "clean": {
       "cache": false
+    },
+    "db:generate:neon": {
+      "cache": false
+    },
+    "db:generate:turso": {
+      "cache": false
+    },
+    "db:migrate:neon": {
+      "cache": false
+    },
+    "db:migrate:turso": {
+      "cache": false
     }
   }
 }

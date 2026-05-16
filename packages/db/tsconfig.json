@@ -5,5 +5,5 @@
     "rootDir": "./src",
     "tsBuildInfoFile": "./dist/.tsbuildinfo"
   },
-  "include": ["src"]
+  "include": ["src", "drizzle.neon.config.ts", "drizzle.turso.config.ts"]
 }
