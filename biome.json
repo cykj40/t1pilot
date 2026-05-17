@@ -16,6 +16,7 @@
       "!**/build",
       "!**/.turbo",
       "!pnpm-lock.yaml",
+      "!**/*.css",
       "!packages/db/drizzle.*.config.js",
       "!packages/db/drizzle.*.config.d.ts"
     ]
